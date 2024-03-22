@@ -6,6 +6,9 @@ import { ConfigModule } from '@nestjs/config';
 import { CacheModule } from '@nestjs/cache-manager';
 import { MongooseModule } from '@nestjs/mongoose';
 import { UserModule } from './user/user.module';
+import { PostsModule } from './posts/posts.module';
+import { ReactionsModule } from './reactions/reactions.module';
+import { CommentsModule } from './comments/comments.module';
 
 @Module({
   imports: [
@@ -19,6 +22,9 @@ import { UserModule } from './user/user.module';
     }),
     AuthModule,
     UserModule,
+    PostsModule,
+    ReactionsModule,
+    CommentsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
