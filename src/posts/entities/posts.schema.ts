@@ -1,5 +1,5 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import mongoose, { Document } from 'mongoose';
+import { Document } from 'mongoose';
 import { User } from '../../user/entities/user.schema';
 import { Reaction } from '../../reactions/entities/reactions.schema';
 
@@ -7,8 +7,8 @@ export type PostDocument = Post & Document;
 
 @Schema()
 export class Post {
-  @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'User' })
-  author: User | mongoose.Schema.Types.ObjectId;
+  @Prop({ type: User })
+  author: User;
 
   @Prop()
   title: string;

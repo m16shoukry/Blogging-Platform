@@ -31,7 +31,7 @@ export class PostsController {
     @GetUser() editor: UserDocument,
     @Body() createPostDto: CreatePostDto,
   ): Promise<BaseApiResponse<PostDocument>> {
-    const newUser = await this.postsService.create(editor._id, createPostDto);
+    const newUser = await this.postsService.create(editor, createPostDto);
     return new SuccessApiResponse<PostDocument>(newUser);
   }
 }
