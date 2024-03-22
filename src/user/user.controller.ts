@@ -51,7 +51,7 @@ export class UserController {
     modelType: GetUserDto,
   })
   async findOne(@Param('id') id: string): Promise<BaseApiResponse<User>> {
-    const user = await this.userService.findOne(id);
+    const user = await this.userService.findOne({ _id: id });
     return new SuccessApiResponse<User>(user);
   }
 

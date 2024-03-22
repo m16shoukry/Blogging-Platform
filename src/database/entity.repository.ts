@@ -37,11 +37,8 @@ export abstract class EntityRepository<T extends Document> {
 
     const skip = (pageNumber - 1) * pageSize;
     const take = pageSize;
-    
-    const data = await this.entityModel.find()
-      .skip(skip)
-      .limit(take)
-      .exec();
+
+    const data = await this.entityModel.find().skip(skip).limit(take).exec();
 
     const count = await this.entityModel.countDocuments({}).exec();
 

@@ -4,7 +4,7 @@ import { ApiTags } from '@nestjs/swagger';
 import { SwaggerApiDocumentation } from '../common/decorators/swagger-api-documentation.decorator';
 import { SuccessApiResponse } from '../common/dto/api-response/success-api-response.dto';
 import { AuthService } from './auth.service';
-import { SignupUserDto } from './dto/createUser.dto';
+import { SignupUserDto } from './dto/signupUser.dto';
 import { AuthenticatedUserDto } from './dto/authenticatedUser.dto';
 import { LoginUserDto } from './dto/loginUser.dto';
 

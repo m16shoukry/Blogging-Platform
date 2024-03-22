@@ -6,7 +6,7 @@ import {
 } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { JwtService } from '@nestjs/jwt';
-import { SignupUserDto } from './dto/createUser.dto';
+import { SignupUserDto } from './dto/signupUser.dto';
 import { comparePassword, hashPassword } from './utils/passwords';
 import { AuthenticatedUserDto } from './dto/authenticatedUser.dto';
 import { LoginUserDto } from './dto/loginUser.dto';
@@ -38,7 +38,7 @@ export class AuthService {
   }
 
   async signup(signupUserDto: SignupUserDto): Promise<AuthenticatedUserDto> {
-    const user = await this.userService.findOne(signupUserDto.email);
+    const user = await this.userService.findOne({email:signupUserDto.email});
 
     if (user) {
       throw new ErrorApiResponse();
@@ -53,7 +53,7 @@ export class AuthService {
   }
 
   async loginUser(loginUserDto: LoginUserDto) {
-    const user = await this.userService.findOne(loginUserDto.email);
+    const user = await this.userService.findOne({email: loginUserDto.email});
     if (!user) throw new NotFoundException();
 
     const pwMatches = comparePassword(loginUserDto.password, user.password);
