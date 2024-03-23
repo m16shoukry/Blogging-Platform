@@ -1,9 +1,9 @@
 import { Injectable } from '@nestjs/common';
 import { CommentsRepository } from './entities/comments.repository';
 import { CreateCommentDto } from './dto/create-comment.dto';
-import { UserDocument } from 'src/user/entities/user.schema';
-import { PostDocument } from 'src/posts/entities/posts.schema';
-import { PostRepository } from 'src/posts/entities/posts.repository';
+import { UserDocument } from '../user/entities/user.schema';
+import { PostDocument } from '../posts/entities/posts.schema';
+import { PostRepository } from '../posts/entities/posts.repository';
 import { LiveCommentsGateway } from './live-comments/live-comments.gateway';
 
 @Injectable()

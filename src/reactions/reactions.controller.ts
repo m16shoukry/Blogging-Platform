@@ -3,13 +3,13 @@ import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
 import { JwtGuard } from '../auth/guards/jwt.guard';
 import { RolesGuard } from '../auth/guards/roles.guard';
 import { ReactionsService } from './reactions.service';
-import { SwaggerApiDocumentation } from 'src/common/decorators/swagger-api-documentation.decorator';
-import { GetUser } from 'src/auth/decorators/get-user.decorators';
-import { SuccessApiResponse } from 'src/common/dto/api-response/success-api-response.dto';
-import { PostDocument } from 'src/posts/entities/posts.schema';
-import { UserDocument } from 'src/user/entities/user.schema';
-import { GetPostDto } from 'src/posts/dto/get-post.dto';
-import { BaseApiResponse } from 'src/common/dto/api-response/base-api-response.dto';
+import { SwaggerApiDocumentation } from '../common/decorators/swagger-api-documentation.decorator';
+import { GetUser } from '../auth/decorators/get-user.decorators';
+import { SuccessApiResponse } from '../common/dto/api-response/success-api-response.dto';
+import { PostDocument } from '../posts/entities/posts.schema';
+import { UserDocument } from '../user/entities/user.schema';
+import { GetPostDto } from '../posts/dto/get-post.dto';
+import { BaseApiResponse } from '../common/dto/api-response/base-api-response.dto';
 import { CreateReactionDto } from './dto/create-reaction.dto';
 
 @Controller('reactions')
