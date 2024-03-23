@@ -8,6 +8,17 @@
 <br>
 <br>
 
+## Installation
+
+```bash
+$ npm install
+```
+## Running the app
+
+```bash
+$ npm run start:dev
+```
+
 ## To view APIs Documentation and Test Inputs/Outputs
 - open in your browser while project is running [http://localhost:3000/api] for swagger.
 
