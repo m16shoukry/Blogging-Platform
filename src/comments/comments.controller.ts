@@ -15,7 +15,7 @@ import { SuccessApiResponse } from '../common/dto/api-response/success-api-respo
 @Controller('comments')
 @ApiTags('comments')
 @ApiBearerAuth()
-// @UseGuards(JwtGuard, RolesGuard)
+@UseGuards(JwtGuard, RolesGuard)
 export class CommentsController {
   constructor(private readonly commentsService: CommentsService) {}
 
