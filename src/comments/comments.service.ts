@@ -11,7 +11,6 @@ import { PostRepository } from 'src/posts/entities/posts.repository';
 export class CommentsService {
   constructor(
     private readonly postsRepository: PostRepository,
-    private readonly postsService: PostsService,
     private readonly commentsRepository: CommentsRepository,
   ) {}
 

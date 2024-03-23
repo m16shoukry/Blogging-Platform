@@ -33,7 +33,7 @@ export class UserController {
 
   @Get()
   @SwaggerApiDocumentation({
-    summary: 'List all users',
+    summary: '[Admin] List all users',
     modelType: GetUserDto,
     isArray: true,
     isPagination: true,
@@ -47,7 +47,7 @@ export class UserController {
 
   @Get(':id')
   @SwaggerApiDocumentation({
-    summary: 'Get One user by id',
+    summary: '[Admin] Get One user by id',
     modelType: GetUserDto,
   })
   async findOne(@Param('id') id: string): Promise<BaseApiResponse<User>> {
@@ -57,7 +57,7 @@ export class UserController {
 
   @Patch(':id')
   @SwaggerApiDocumentation({
-    summary: 'Update One user by id',
+    summary: '[Admin] Update One user by id',
     modelType: GetUserDto,
   })
   async update(
@@ -70,7 +70,7 @@ export class UserController {
 
   @Delete(':id')
   @SwaggerApiDocumentation({
-    summary: 'Delete user by id',
+    summary: '[Admin] Delete user by id',
     modelType: GetUserDto,
   })
   async remove(@Param('id') id: string) {

@@ -3,10 +3,10 @@ import { IsString } from 'class-validator';
 
 export class UpdateCommentDTO {
   @IsString()
-  @ApiProperty({ type: String, description: 'Post title' })
+  @ApiProperty({ type: String, description: 'Comment title' })
   title: string;
 
   @IsString()
-  @ApiProperty({ type: String, description: 'Post content' })
+  @ApiProperty({ type: String, description: 'Comment content' })
   content: string;
 }
