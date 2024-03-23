@@ -1,7 +1,10 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { Document } from 'mongoose';
+import { Document, Types } from 'mongoose';
 import { User } from '../../user/entities/user.schema';
-import { Reaction } from '../../reactions/entities/reactions.schema';
+import {
+  Reaction,
+  ReactionDocument,
+} from '../../reactions/entities/reactions.schema';
 
 export type PostDocument = Post & Document;
 

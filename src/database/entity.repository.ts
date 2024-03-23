@@ -5,6 +5,7 @@ export abstract class EntityRepository<T extends Document> {
   constructor(protected readonly entityModel: Model<T>) {}
 
   async findOne(entityFilterQuery: FilterQuery<T>): Promise<T | null> {
+    console.log(entityFilterQuery);
     return await this.entityModel.findOne(entityFilterQuery).exec();
   }
 
@@ -23,8 +24,19 @@ export abstract class EntityRepository<T extends Document> {
   ): Promise<T> {
     return await this.entityModel.findOneAndUpdate(
       entityFilterQuery,
+       updateEntityData,
+      { new: true },
+    ).exec();
+  }
+
+  async updateOne(
+    entityFilterQuery: FilterQuery<T>,
+    updateEntityData: UpdateQuery<unknown>,
+  ): Promise<any> {
+    return await this.entityModel.updateOne(
+      entityFilterQuery,
       updateEntityData,
-    );
+    ).exec();
   }
 
   async deleteMany(entityFilterQuery: FilterQuery<T>): Promise<boolean> {
