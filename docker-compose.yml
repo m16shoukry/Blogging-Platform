@@ -1,0 +1,27 @@
+version: '3'
+services:
+    api:
+        container_name: Blogging-platform-APIs
+        build:
+            dockerfile: Dockerfile
+            context: .
+        depends_on:
+          - mongodb
+        environment:
+          DB_URL: 'mongodb://mongodb:27017/blog_dev'
+          JWT_SECRET: "J2MVWKLDLL5AKIA5MLUB"
+          JWT_EXPIRATION_IN_HOURS: 8
+          NODE_ENV: development
+        ports: 
+          - "8080:3000"
+    
+    mongodb:
+      container_name: database_container
+      image: mongo:latest
+      restart: always
+      volumes:
+        - mongodb:/data/db
+      
+
+volumes:
+  mongodb: {}

@@ -4,7 +4,7 @@ import { Reaction_Types } from '../interfaces/reactions.interface';
 
 export class UpdateReactionDTO {
   @IsString()
-  @ApiProperty({ type: { enum: [Reaction_Types] }, description: 'Reaction type' })
+  @ApiProperty({ type: String, description: 'Reaction type' })
   type: Reaction_Types;
 
 }

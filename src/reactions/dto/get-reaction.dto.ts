@@ -12,9 +12,9 @@ export class GetReactionDto {
   auther: GetUserDto;
 
   @IsString()
-  @ApiProperty({ type: { enum: [Reaction_Types] }, description: 'Reaction content' })
+  @ApiProperty({ type: String, description: 'Reaction content' })
   type: Reaction_Types;
-  
+
   @IsString()
   @ApiProperty({ type: Date, description: 'Reaction createdAt' })
   createdAt: Date;
